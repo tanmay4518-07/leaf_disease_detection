@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Leaf Disease Detection</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Leaf Disease Detection Result</h1>
+
+        <div class="result">
+            <p><strong>Result:</strong> {{ result }}</p>
+        </div>
+
+        {% if image_path %}
+            <img src="{{ url_for('static', filename=image_path) }}" alt="Uploaded Leaf Image">
+        {% endif %}
+
+        <br>
+        <a href="{{ url_for('index') }}" class="back-button">Detect Another Leaf</a>
+    </div>
+</body>
+</html>
